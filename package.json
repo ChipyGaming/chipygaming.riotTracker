@@ -1,0 +1,25 @@
+{
+  "name": "chipygaming.loltracker",
+  "version": "1.0.0",
+  "description": "Track stats for riot titles",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client" : "npm run serve --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Miguel Guerra",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "concurrently": "^6.4.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
