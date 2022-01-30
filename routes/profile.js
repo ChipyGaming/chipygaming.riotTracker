@@ -21,6 +21,8 @@ router.get('/:summonerName', async (req, res) => {
         }
         );
         const {id} = summonerIdResponse.data;
+        const {puuid} = summonerIdResponse.data;
+        console.log(puuid);
         summonerId = summonerIdResponse.data;
         const tftStatsResponse = await axios (`${process.env.RIOT_API_URL}/tft/league/v1/entries/by-summoner/${id}`,
         {
@@ -32,6 +34,7 @@ router.get('/:summonerName', async (req, res) => {
             headers
         });
         summonerStats = summonerStatsResponse.data;
+        console.log(summonerStats);
         res.json({summonerId: summonerId, tftStats: tftStats, summonerStats: summonerStats});
         
         
