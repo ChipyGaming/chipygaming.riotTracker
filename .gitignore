@@ -5,3 +5,4 @@ public
 .env.local
 .env.staging
 .env*.local
+config.env
