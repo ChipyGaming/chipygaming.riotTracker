@@ -18,16 +18,15 @@
                 </div>
                 <ul>
                     <li>
-                        <h4>Current Rank</h4>
-                        <p>{{tftRankedStatsUrl.tier}} {{tftRankedStatsUrl.rank}} - {{tftRankedStatsUrl.leaguePoints}} LP</p>
+                        <h2>Current Rank:</h2>
+                        <h4>{{tftRankedStatsUrl.tier}} {{tftRankedStatsUrl.rank}} - {{tftRankedStatsUrl.leaguePoints}} LP</h4>
                     </li>
                     <li>
-                        <h4>Wins </h4>
-                        <p>{{tftRankedStatsUrl.wins}}</p>
+                        <h2>Wins: {{tftRankedStatsUrl.wins}}</h2>
+                        <h2>Losses: {{tftRankedStatsUrl.losses}}</h2>
                     </li>
                     <li>
-                        <h4>Win Streak</h4>
-                        <p>{{tftRankedStatsUrl.hotStreak}}</p>
+                        <h2>Win Streak? {{tftRankedStatsUrl.hotStreak}}</h2>
                     </li>
                 </ul>
 
@@ -36,12 +35,12 @@
                 </div>
                 <ul v-if="tftHyperRollUrl">
                     <li>
-                        <h4>Current Rank</h4>
-                        <p>{{tftHyperRollUrl.ratedTier}} {{tftHyperRollUrl.ratedRating}}</p>
+                        <h2>Current Rank:</h2>
+                        <h4>{{tftHyperRollUrl.ratedTier}} - {{tftHyperRollUrl.ratedRating}}</h4>
                     </li>
                     <li>
-                        <h4>Wins </h4>
-                        <p>{{tftHyperRollUrl.wins}}</p>
+                        <h2>Wins: {{tftHyperRollUrl.wins}}</h2>
+                        <h2>Losses: {{tftHyperRollUrl.losses}}</h2>
                     </li>
                 </ul>
             </div>

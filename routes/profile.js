@@ -8,6 +8,7 @@ let summonerId;
 const headers = {'X-Riot-Token': process.env.RIOT_API_KEY}
 const headers2 = {'X-Riot-Token': process.env.RIOT_API_KEY_TFT}
 const headers3= {'X-Riot-Token': process.env.RIOT_API_KEY_LOL}
+const lolAPI = {'X-Riot-Token': process.env.RIOT_API_KEY_LOL}
 
 //input summonerName output id
 router.get('/:summonerName', async (req, res) => {
@@ -18,9 +19,9 @@ router.get('/:summonerName', async (req, res) => {
         console.log(headers3);
         console.log(headers);
 
-        const summonerIdResponse = await axios(`${process.env.RIOT_API_URL}/lol/summoner/v4/summoners/by-name/${summonerName}`, 
+        const summonerIdResponse = await axios(`${process.env.RIOT_API_URL}/tft/summoner/v1/summoners/by-name/${summonerName}`, 
         {
-         headers3
+        headers: headers2
         }
         );
         const {id} = summonerIdResponse.data;
@@ -29,16 +30,11 @@ router.get('/:summonerName', async (req, res) => {
         summonerId = summonerIdResponse.data;
         const tftStatsResponse = await axios (`${process.env.RIOT_API_URL}/tft/league/v1/entries/by-summoner/${id}`,
         {
-        headers3
+        headers: headers2
         });
         tftStats = tftStatsResponse.data;
-        const summonerStatsResponse = await axios (`${process.env.RIOT_API_URL}/lol/league/v4/entries/by-summoner/${id}`,
-        {
-            headers3
-        });
-        summonerStats = summonerStatsResponse.data;
-        console.log(summonerStats);
-        res.json({summonerId: summonerId, tftStats: tftStats, summonerStats: summonerStats});
+        console.log(tftStats);
+        res.json({summonerId: summonerId, tftStats: tftStats});
         
         
 
